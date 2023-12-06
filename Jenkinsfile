@@ -16,7 +16,7 @@ pipeline {
 
             sh 'pwd'
              sh 'ls'
-             sh 'mvn -v'
+             sh './mvnw package -Dquarkus.package.type=uber-jar'
             }
         }
         stage('Test'){
