@@ -24,7 +24,7 @@ public class BookResource {
     @POST
     public Book insert(Book insertBook) {
         bookRepository.persist(insertBook);
-
+//Comentario Agregado
         return insertBook;
     }
 
