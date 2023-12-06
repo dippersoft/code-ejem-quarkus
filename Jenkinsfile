@@ -21,12 +21,8 @@ pipeline {
             steps {
                 echo 'Prepare..'
                 sh "chmod +x mvnw"
+                sh './mvnw clean'
                 sh './mvnw package'
-                sh 'docker build -f src/main/docker/Dockerfile.jvm -t quarkus/code-ejem-quarkus-jvm .'
-               //  sh 'docker run -d -i --rm -p 8081:8081 quarkus/code-ejem-quarkus-jvm'
-                //sh "./mvnw package"
-                //sh "java -jar target/quarkus-app/quarkus-run.jar"
-
 
             }
         }
@@ -34,9 +30,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sh 'docker build -f src/main/docker/Dockerfile.jvm -t quarkus/code-ejem-quarkus-jvm .'
 
-            // sh './mvnw package -Dquarkus.package.type=uber-jar'
-             //sh './mvnw package -Dnative -Dquarkus.native.container-build=true'
             }
         }
         stage('Test'){
@@ -46,9 +41,9 @@ pipeline {
         }
         stage('Deploy') {
              steps {
-                            echo 'Deploying....?'
-                            //sh './mvnw compile quarkus:dev'
-                         //    sh "./mvnw compile quarkus:dev"
+                    echo 'Deploying....?'
+                    sh 'docker run -d -i --rm -p 8081:8081 quarkus/code-ejem-quarkus-jvm'
+
                    }
         }
     }
