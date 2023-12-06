@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
                 steps {
-                sh 'java -v'
+                sh 'java --version'
                      echo 'checkout..'
                 }
             }
