@@ -48,7 +48,7 @@ pipeline {
              steps {
                             echo 'Deploying....?'
                             //sh './mvnw compile quarkus:dev'
-                             sh "./mvnw compile quarkus:dev"
+                         //    sh "./mvnw compile quarkus:dev"
                    }
         }
     }
