@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy') {
              steps {
                             echo 'Deploying....?'
-                            sh 'java -v'
+                            sh './mvnw compile quarkus:dev'
                    }
         }
     }
