@@ -5,7 +5,7 @@ pipeline {
     options {
         skipStagesAfterUnstable()
         disableConcurrentBuilds()
-        timeout(time: 15, unit: 'MINUTES')
+        timeout(time: 3, unit: 'MINUTES')
     }
 
 
