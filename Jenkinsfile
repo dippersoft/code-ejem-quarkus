@@ -3,11 +3,18 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
+
+
     stages {
+        stage('Checkout') {
+                steps {
+                     echo 'checkout..'
+                }
+            }
         stage('Build') {
             steps {
-ls
-            echo 'Testing..'
+
+            sh 'ls'
             }
         }
         stage('Test'){
