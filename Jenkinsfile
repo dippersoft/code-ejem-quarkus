@@ -1,7 +1,3 @@
-import org.bpd.QuarkusHelper
-import org.bpd.VersionControl
-def quarkusUtils = new QuarkusHelper(this)
-def versionControlUtils = new VersionControl(this)
 
 pipeline {
     agent any
