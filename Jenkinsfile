@@ -2,6 +2,8 @@ pipeline {
     agent any
     options {
         skipStagesAfterUnstable()
+        disableConcurrentBuilds()
+        timeout(time: 15, unit: 'MINUTES')
     }
 
 
@@ -12,6 +14,15 @@ pipeline {
                      echo 'checkout..'
                 }
             }
+        stage('Prepare') {
+            steps {
+                echo 'Prepare..'
+                sh "chmod +x mvnw"
+                quarkusUtils.runClean()
+
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -27,7 +38,7 @@ pipeline {
         stage('Deploy') {
              steps {
                             echo 'Deploying....?'
-                            sh './mvnw compile quarkus:dev'
+                            ##sh './mvnw compile quarkus:dev'
                    }
         }
     }
