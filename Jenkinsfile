@@ -16,6 +16,7 @@ pipeline {
 
             sh 'pwd'
              sh 'ls'
+             sh 'mvn -v'
             }
         }
         stage('Test'){
