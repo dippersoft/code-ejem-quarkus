@@ -23,7 +23,7 @@ pipeline {
                 sh "chmod +x mvnw"
                 //sh "./mvnw package"
                 //sh "java -jar target/quarkus-app/quarkus-run.jar"
-                sh "./mvnw compile quarkus:dev"
+
 
             }
         }
@@ -45,6 +45,7 @@ pipeline {
              steps {
                             echo 'Deploying....?'
                             //sh './mvnw compile quarkus:dev'
+                             sh "./mvnw compile quarkus:dev"
                    }
         }
     }
