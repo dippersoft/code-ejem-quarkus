@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
                 steps {
-                dir
+
                 sh 'java --version'
                      echo 'checkout..'
                 }
