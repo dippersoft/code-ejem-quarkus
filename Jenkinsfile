@@ -21,6 +21,9 @@ pipeline {
             steps {
                 echo 'Prepare..'
                 sh "chmod +x mvnw"
+                sh './mvnw package'
+                sh 'docker build -f src/main/docker/Dockerfile.jvm -t quarkus/code-ejem-quarkus-jvm .'
+                sh 'docker run -d -i --rm -p 8080:8080 quarkus/code-ejem-quarkus-jvm'
                 //sh "./mvnw package"
                 //sh "java -jar target/quarkus-app/quarkus-run.jar"
 
