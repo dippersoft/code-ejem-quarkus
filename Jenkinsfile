@@ -14,7 +14,7 @@ pipeline {
             }
         stage('Build') {
             steps {
-
+                echo 'Building..'
             // sh './mvnw package -Dquarkus.package.type=uber-jar'
              //sh './mvnw package -Dnative -Dquarkus.native.container-build=true'
             }
