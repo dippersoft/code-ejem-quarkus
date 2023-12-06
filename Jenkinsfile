@@ -5,6 +5,16 @@ def versionControlUtils = new VersionControl(this)
 
 pipeline {
     agent any
+
+     tools {
+            jdk 'java-17-openjdk.x86_64'
+            maven 'maven-3.9.4'
+        }
+
+        agent {
+    		label('java && maven')
+    	}
+
     options {
         skipStagesAfterUnstable()
         disableConcurrentBuilds()
