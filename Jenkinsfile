@@ -14,7 +14,7 @@ pipeline {
         stage('Build') {
             steps {
 
-            sh 'ls'
+            sh 'mvn package -Dquarkus.package.type=uber-jar'
             }
         }
         stage('Test'){
