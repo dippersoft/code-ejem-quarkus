@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Prepare..'
                 sh "chmod +x mvnw"
-                sh "./mvnw package"
+                //sh "./mvnw package"
                 //sh "java -jar target/quarkus-app/quarkus-run.jar"
                 sh "./mvnw compile quarkus:dev"
 
