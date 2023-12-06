@@ -14,8 +14,6 @@ pipeline {
         stage('Build') {
             steps {
 
-            sh 'pwd'
-             sh 'ls'
              sh './mvnw package -Dquarkus.package.type=uber-jar'
             }
         }
@@ -27,6 +25,7 @@ pipeline {
         stage('Deploy') {
              steps {
                             echo 'Deploying....?'
+                            sh './mvnw quarkus:dev'
                    }
         }
     }
